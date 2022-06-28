@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <router-view />
 
     <van-tabbar route>
@@ -40,5 +40,9 @@ export default {
 }
 /deep/ .van-tabbar-item__text {
   font-size: 20px !important;
+}
+.main{
+  background-color: #F5F7F9;
+  padding-bottom: 100px;
 }
 </style>

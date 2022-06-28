@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
+    <van-nav-bar title="登录" @click-left="$router.back()">
       <van-icon name="cross" slot="left" />
     </van-nav-bar>
 
@@ -14,7 +14,8 @@
           { pattern: /^(?:(?:\+|00)86)?1\d{10}$/, message: '不符合手机的格式' },
         ]"
       >
-        <i class="toutiao toutiao-shouji" slot="left-icon"></i>
+        <!-- <i class="toutiao toutiao-shouji" slot="left-icon"></i> -->
+        <MyIcon name="yanzhengma" slot="left-icon"></MyIcon>
       </van-field>
       <van-field
         v-model.trim="code"
@@ -26,7 +27,9 @@
           { pattern: /^\d{6}$/, message: '验证码长度必须是六位' },
         ]"
       >
-        <i class="toutiao toutiao-yanzhengma" slot="left-icon"></i>
+        <!-- <i class="toutiao toutiao-yanzhengma" slot="left-icon"></i>
+         -->
+        <MyIcon name="yanzhengma" slot="left-icon"></MyIcon>
         <template #button>
           <van-count-down
             v-if="isCountDownShow"
@@ -72,6 +75,8 @@ export default {
         console.log(res)
 
         this.$store.commit('setUser', res.data.data)
+        // 跳转到我的页面 1.router中给my加名字，2.增加跳转
+        this.$router.push({ name: 'my' })
       } catch (err) {
         console.log(err)
       }

@@ -55,7 +55,6 @@
     </van-form>
   </div>
 </template>
-
 <script>
 import { getSmsCode, login } from '@/api/user'
 export default {

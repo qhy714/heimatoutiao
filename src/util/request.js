@@ -8,7 +8,7 @@ const instance = axios.create({
 // 添加请求拦截器c
 instance.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
-  if (store.state.user && store.state.user.token) {
+  if (store.state.user) {
     config.headers = {
       Authorization: 'Bearer ' + store.state.user.token
     }

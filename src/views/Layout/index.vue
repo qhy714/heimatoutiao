@@ -1,6 +1,8 @@
 <template>
-  <div class="main">
-    <router-view />
+  <div>
+    <keep-alive :include="['Home']">
+      <router-view class="main"/>
+    </keep-alive>
 
     <van-tabbar route>
       <van-tabbar-item replace to="/home" icon="home-o"
@@ -41,8 +43,8 @@ export default {
 /deep/ .van-tabbar-item__text {
   font-size: 20px !important;
 }
-.main{
-  background-color: #F5F7F9;
+.main {
+  background-color: #f5f7f9;
   padding-bottom: 100px;
 }
 </style>

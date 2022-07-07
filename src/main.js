@@ -22,9 +22,13 @@ list.forEach(item => {
 }) */
 
 import * as obj from '@/filter'
+import FollowUser from '@/components/FollowUser.vue'
+import '@/components'
+
 Object.keys(obj).forEach(key => {
   Vue.filter(key, obj[key])
 })
+Vue.component(FollowUser.name, FollowUser)
 
 Vue.component('MyIcon', MyIcon)
 Vue.use(Vant)
